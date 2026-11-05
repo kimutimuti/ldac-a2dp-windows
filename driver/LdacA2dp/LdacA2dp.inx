@@ -34,6 +34,9 @@ LdacA2dp.sys = 1,,
 %LdacA2dp.DeviceDesc% = LdacA2dp_Device, BTHENUM\{0000110b-0000-1000-8000-00805f9b34fb}_VID&000102b0_PID&0000
 ; ...its AVRCP: remote control (AVCTP, buttons, absolute volume) and the target
 ; record, which only needs to be kept away from the inbox AvrcpTransport
+%LdacA2dp.DeviceDesc% = LdacA2dp_Device, BTHENUM\Dev_08F0B6CDF9C9
+%LdacA2dp.AvrcpDesc% = LdacA2dp_Avrcp, BTHENUM\Dev_08F0B6CDF9C9
+%LdacA2dp.IdleDesc%  = LdacA2dp_Idle,  BTHENUM\Dev_08F0B6CDF9C9
 %LdacA2dp.AvrcpDesc% = LdacA2dp_Avrcp, BTHENUM\{0000110e-0000-1000-8000-00805f9b34fb}_VID&000102b0_PID&0000
 %LdacA2dp.IdleDesc%  = LdacA2dp_Idle,  BTHENUM\{0000110c-0000-1000-8000-00805f9b34fb}_VID&000102b0_PID&0000
 
