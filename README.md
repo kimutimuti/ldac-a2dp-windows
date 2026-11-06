@@ -1,7 +1,3 @@
-# This fork changed
-
-add Edifier W820NB Plus(Gen1)'s LDAC driver in LdacA2dp.inx.
-
 # LDAC A2DP for Windows
 
 An open-source replacement for the Windows Bluetooth audio source (`BthA2dp`) that streams **LDAC** (Sony's hi-res Bluetooth codec, up to 990 kbit/s, 96 kHz / 24-bit) to headphones, with SBC as the fallback.
@@ -63,6 +59,9 @@ Documentation (in Russian):
 Apache License 2.0 (see `LICENSE`). Third-party code: libldac (AOSP, Apache 2.0) and the AOSP SBC encoder (Apache 2.0), see `NOTICE`. Not affiliated with Sony, HARMAN/JBL or Microsoft.
 
 ---
+## В этом форке внесены изменения
+
+В файл LdacA2dp.inx добавлен драйвер LDAC для Edifier W820NB Plus (Gen1).
 
 ## Русский
 
