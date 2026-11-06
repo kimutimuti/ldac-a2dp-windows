@@ -4,6 +4,10 @@ An open-source replacement for the Windows Bluetooth audio source (`BthA2dp`) th
 
 **English** · [Русский](#русский)
 
+## This fork changed
+
+add Edifier W820NB Plus(Gen1)'s LDAC driver in LdacA2dp.inx.
+
 ## What it does
 
 - **Kernel driver** (`driver/LdacA2dp`, KMDF):
