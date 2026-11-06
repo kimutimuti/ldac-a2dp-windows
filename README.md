@@ -8,6 +8,22 @@ An open-source replacement for the Windows Bluetooth audio source (`BthA2dp`) th
 
 add Edifier W820NB Plus(Gen1)'s LDAC driver in LdacA2dp.inx.
 
+### How to use
+
+``` PowerShell7
+cd "C:\DIR_PATH\LdacA2dp-Driver\build\LdacA2dp\Release\LdacA2dp"
+
+$cert = New-SelfSignedCertificate -Type CodeSigningCert -Subject "CN=LdacA2dp_Kimut" -CertStoreLocation "Cert:\LocalMachine\My"
+
+Export-Certificate -Cert $cert -FilePath ".\LdacA2dp_Kimut.cer"
+Import-Certificate -FilePath ".\LdacA2dp_Kimut.cer" -CertStoreLocation "Cert:\LocalMachine\Root"
+Import-Certificate -FilePath ".\LdacA2dp_Kimut.cer" -CertStoreLocation "Cert:\LocalMachine\TrustedPublisher"
+
+Set-AuthenticodeSignature -FilePath ".\LdacA2dp.sys" -Certificate $cert
+Set-AuthenticodeSignature -FilePath ".\ldaca2dp.cat" -Certificate $cert
+```
+Open PowerShell as an administrator and enter the command above. Next, open Device Manager, go to "Sound, video and game controllers," and right-click "Edifier W820NB Plus" to open its Properties. Then, follow these steps: Driver -> Update Driver -> Browse my computer for drivers -> Let me pick from a list of available drivers on my computer -> Have Disk -> select the path of the driver you just signed -> Next to complete the installation.
+
 ## What it does
 
 - **Kernel driver** (`driver/LdacA2dp`, KMDF):
@@ -66,6 +82,22 @@ Apache License 2.0 (see `LICENSE`). Third-party code: libldac (AOSP, Apache 2.0)
 ## В этом форке внесены изменения
 
 В файл LdacA2dp.inx добавлен драйвер LDAC для Edifier W820NB Plus (Gen1).
+
+### Как использовать
+
+``` PowerShell7
+cd "C:\DIR_PATH\LdacA2dp-Driver\build\LdacA2dp\Release\LdacA2dp"
+
+$cert = New-SelfSignedCertificate -Type CodeSigningCert -Subject "CN=LdacA2dp_Kimut" -CertStoreLocation "Cert:\LocalMachine\My"
+
+Export-Certificate -Cert $cert -FilePath ".\LdacA2dp_Kimut.cer"
+Import-Certificate -FilePath ".\LdacA2dp_Kimut.cer" -CertStoreLocation "Cert:\LocalMachine\Root"
+Import-Certificate -FilePath ".\LdacA2dp_Kimut.cer" -CertStoreLocation "Cert:\LocalMachine\TrustedPublisher"
+
+Set-AuthenticodeSignature -FilePath ".\LdacA2dp.sys" -Certificate $cert
+Set-AuthenticodeSignature -FilePath ".\ldaca2dp.cat" -Certificate $cert
+```
+Откройте PowerShell от имени администратора и введите указанную выше команду. Затем откройте Диспетчер устройств, перейдите в раздел «Звуковые, игровые и видеоустройства», откройте Свойства для «Edifier W820NB Plus» и выполните следующие действия: Драйвер -> Обновить драйвер -> Найти драйверы на этом компьютере -> Выбрать драйвер из списка доступных драйверов на компьютере -> Установить с диска -> выберите путь к драйверу, который вы только что подписали -> Далее для завершения установки.
 
 ## Русский
 
