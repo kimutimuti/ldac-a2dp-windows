@@ -23,6 +23,10 @@ jobs:
         with:
           dotnet-version: 10.0.x
       - run: dotnet build ui/LdacConfig -c Release
+      - name: Upload utility artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: LdacA2dp-Settings-utility
 
   driver:
     name: KMDF driver
